@@ -215,6 +215,8 @@ export async function roll_skill(br_card, expend_bennie) {
     extra_data,
   );
   await run_macros(macros, br_card.actor, null, br_card);
+    //Call a hook after roll for other modules
+  Hooks.call("BRSW-RollSkill", br_card);
 }
 
 /***
